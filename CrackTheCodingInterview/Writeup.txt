@@ -1,0 +1,20 @@
+Have you been applying for jobs at the major tech companies and are worried about the questions you'll be asked 
+in the technical interviews?
+
+Are you interested in what you need to focus on to prepare for future interviews?
+
+Maybe you are a first year and wondering what will be expected of you be the time you graduate.
+
+Starting Tuesday Feburary 29th, we will be hosting weekly programming tutorials where we will try to solve 
+problems from the book 'Crack the Coding Interview' as a group. These are questions that have been asked in 
+programming technical interviews in the past and are great practice no matter your programming ability (an year).
+
+Being able to solve these problems will help your programming ability and your knowledge of the theory behind 
+algorithms.
+
+Stop by if you are interested.
+
+What: Coding Interview Tutorial
+Where: Breakout Room MCJ 328
+When: Tuesdays 2PM - 3PM (starting Monday Feb 29)
+
