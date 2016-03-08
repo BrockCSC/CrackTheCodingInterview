@@ -44,9 +44,8 @@ public class Question2 {
             }
         }
         
-        //go through the hashmap to ensure everything is 0
-        }
-        
+        //go through the hashmap to ensure everything is 0  
+        return true;
     }
     
     
@@ -56,9 +55,6 @@ public class Question2 {
         String a = "computer";
         String b = "putcormpe";
         isPermutation(a,b);
-        
-        
-        
         
         
     }
