@@ -1,5 +1,5 @@
-
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,53 +10,58 @@ import java.util.HashMap;
 /**
  *
  * @author Peter
- * 
+ *
  * Given 2 strings determine if one is a permutation of another.
- * 
+ *
  */
+
+
 public class Question2 {
-    
-    public static boolean isPermutation(String s1, String s2)
-    {
-        HashMap map = new HashMap();
-        
-        //iterate through first string
-        for(int i = 0; i < s1.length(); i++)
-        {
-            //check if already found
-            if(s1.containsKey(s1.charAt(i))){
-                //add to value
+
+    public static boolean isPermutation(String s1, String s2) {
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < s1.length(); i++) {
+
+            if (map.containsKey(s1.charAt(i))) {
+                //increment the count
+                map.put(s1.charAt(i), map.get(s1.charAt(i)) + 1);
             }
-            else{
-                //add item to list
+
+            else {
+                //add it to the map
+                map.put(s1.charAt(i), 1);
             }
+
         }
-        
-        //iterate through second string
-        for(int i = 0; i < s2.length(); i++)
-        {
+
+        for (int i = 0; i < s2.length(); i++) {
             //check if already found
-            if(s2.containsKey(s1.charAt(i))){
+            if (map.containsKey(s2.charAt(i))) {
                 //remove from value
+                map.put(s2.charAt(i), map.get(s2.charAt(i))-1);
             }
-            else{
+
+            else {
                 return false;
             }
+
         }
         
-        //go through the hashmap to ensure everything is 0  
+        //check if each value in the hashmap is 0
+        for (Map.Entry<Character, Integer> character : map.entrySet()) {
+            if (character.getValue() != 0) return false;
+        }
+        //if so, we have a permutation
         return true;
     }
-    
-    
-    public static void main(String[] args)
-    {
-        
-        String a = "computer";
-        String b = "putcormpe";
-        isPermutation(a,b);
-        
-        
+
+    public static void main(String[] args) {
+        String a = "AAB";
+        String b = "AA";
+        System.out.println(isPermutation(a,b)); //false
     }
+    
     
 }
