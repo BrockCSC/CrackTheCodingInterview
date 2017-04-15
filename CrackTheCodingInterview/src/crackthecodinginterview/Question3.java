@@ -1,6 +1,4 @@
-
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 /*
@@ -12,27 +10,46 @@ import java.util.LinkedList;
 /**
  *
  * @author Peter
- * 
+ *
  * Write code to remove duplicates from an unsorted linked list
  */
 public class Question3 {
-    
-    
-    public void removeDuplicates(LinkedList ll)
-    {
-        HashMap map = new HashMap();
-        Iterator i = ll.iterator();
-        
-        while(i.hasNext())
-        {
-            Object val = i.next();
-            if(map.containsKey(i.next())){
-                //remove the current
+
+    public static void removeDuplicates(LinkedList<Object> ll) {
+
+        HashMap<Object, Integer> map = new HashMap<>();
+
+        //iterate through the list
+        for (int index = 0; index < ll.size(); index++) {
+
+            //if it's in our hashmap
+            if (map.containsKey(ll.get(index))) {
+                //remove the element from the linkedlist
+                ll.remove(index);
             }
-            else{
-                //add to HashMap
+
+            else {
+                //otherwise, put the element in our map
+                map.put(ll.get(index), 1);
             }
-                
+
         }
+
+    }
+
+    public static void main(String[] args) {
+
+        LinkedList<Object> testList = new LinkedList<>();
+
+        testList.add(1);
+        testList.add(2);
+        testList.add(1);
+
+        removeDuplicates(testList);
+
+        for (int index = 0; index < testList.size(); index++) {
+            System.out.println(testList.get(index));
+        }
+
     }
 }
