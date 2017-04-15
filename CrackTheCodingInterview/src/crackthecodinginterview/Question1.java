@@ -27,11 +27,8 @@ public class Question1 {
         if (target == null || src == null) {
             return false;
         }
-        if (target.indexOf(src) > -1) {
-            return true;
-        }
-
-        return false;
+        
+        return target.indexOf(src) > -1
     }
 
     /**
@@ -50,12 +47,7 @@ public class Question1 {
             return false;
         }
 
-        if (isSubstring(target+target, src)) {
-            return true;
-        }
-
-        return false;
-
+        return isSubstring(target+target, src);
     }
 
     public static void main(String[] args) {
@@ -64,5 +56,4 @@ public class Question1 {
 
         System.out.println(isRotation(b, a));
     }
-
 }
